@@ -1,0 +1,3 @@
+# remove ssh keys folder
+/aula/ssh_keys/
+/referencia/ssh_keys/
