@@ -54,8 +54,31 @@ resource "aws_instance" "exemplo_ec2" {
   }
 }
 
+resource "aws_instance" "exemplo_ec2_2" {
+  ami           = data.aws_ami.amazon_linux.id
+  instance_type = "t2.micro"
+  
+  vpc_security_group_ids = [aws_security_group.ec2_sg.id]
+  
+  user_data = <<-EOF
+              #!/bin/bash
+              yum update -y
+              yum install -y httpd
+              systemctl start httpd
+              systemctl enable httpd
+              echo "<h1>Servidor Web LocalStack</h1>" > /var/www/html/index.html
+              EOF
+
+  tags = {
+    Name = "EC2-Exemplo-LocalStack_2"
+  }
+}
+
 output "instance_id" {
-  value = aws_instance.exemplo_ec2.id
+   value = [
+    aws_instance.exemplo_ec2.id,
+    aws_instance.exemplo_ec2_2.id
+   ]
 }
 
 output "instance_public_ip" {
