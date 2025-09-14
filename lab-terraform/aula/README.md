@@ -46,6 +46,12 @@ terraform  plan  -out=plan_exemplo3_sqs
 terraform  apply plan_exemplo3_sqs
 cd ..
 ```
+
+### Executar Exemplo multi-size-ec2
+
+Veja o [README](./terraform/multi-size-ec2/README.md) especifico deste lab.
+
+
 ### Limpeza do ambiente
 
 Para destruir todos os recursos criados:
