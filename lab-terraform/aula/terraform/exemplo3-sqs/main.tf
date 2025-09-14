@@ -10,7 +10,7 @@ resource "aws_sqs_queue" "topico1" {
   tags = {
     Name        = "Topico1"
     Environment = "lab"
-    Example     = "exemplo7-sqs"
+    Example     = "exemplo3-sqs"
   }
 }
 
@@ -26,7 +26,7 @@ resource "aws_sqs_queue" "topico2" {
   tags = {
     Name        = "Topico2"
     Environment = "lab"
-    Example     = "exemplo7-sqs"
+    Example     = "exemplo3-sqs"
   }
 }
 
@@ -42,7 +42,7 @@ resource "aws_sqs_queue" "topico3" {
   tags = {
     Name        = "Topico3"
     Environment = "lab"
-    Example     = "exemplo7-sqs"
+    Example     = "exemplo3-sqs"
   }
 }
 
